@@ -1,0 +1,33 @@
+/*
+  image container
+    - 3 images in large-size
+    - 2 images in mid-size
+    - 1 image in small-size
+*/
+#image-container {
+  display: grid;
+  width: 100vw;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 30px;
+  gap: 10px;
+}
+
+#image-container .image {
+  height: 30vh;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  border: 1px solid blueviolet;
+}
+
+/* for mid-size */
+@media (max-width: 800px) {
+  #image-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  #image-container {
+    grid-template-columns: 1fr;
+  }
+}

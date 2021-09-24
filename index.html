@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- external stylesheets -->
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="stylesheet" href="./styles/navbar.css" />
+    <link rel="stylesheet" href="./styles/images.css" />
+
+    <!-- external javascript -->
+    <script src="./scripts/script.js" defer></script>
+    <script src="./scripts/images.js" defer></script>
+
+    <title>Image Gallary</title>
+  </head>
+  <body>
+    <!-- header and navbar -->
+    <header id="header">
+      <nav id="navbar">
+        <div class="left">
+          <h2 class="nav-logo nav-link">Logo</h2>
+        </div>
+        <div class="right">
+          <input
+            class="image-search"
+            type="text"
+            name="query"
+            placeholder="search"
+          />
+          <h3 class="nav-link">favourite</h3>
+        </div>
+      </nav>
+    </header>
+
+    <!-- main content of site -->
+    <main>
+      <div id="image-container"></div>
+    </main>
+  </body>
+</html>

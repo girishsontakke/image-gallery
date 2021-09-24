@@ -1,0 +1,16 @@
+/* global variables  */
+:root {
+  --font-family: sans-serif, Courier, monospace;
+}
+
+/* global style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+body {
+  background-color: whitesmoke;
+}

@@ -1,0 +1,29 @@
+/* navbar  */
+header > nav {
+  width: 100%;
+  height: 70px;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: 1px 3px 11px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 1px 3px 11px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 3px 11px 0px rgba(0, 0, 0, 0.5);
+}
+
+#navbar .nav-link {
+  cursor: pointer;
+}
+
+#navbar > .right {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+}
+
+#navbar > .right > .image-search {
+  width: 200px;
+  outline: none;
+  border-radius: 3px;
+  padding: 10px;
+}
