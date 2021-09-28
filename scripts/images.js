@@ -54,37 +54,71 @@ class State {
       ...this.state,
       ...updatedState,
     };
+    updateImageContainer();
   };
 }
 const initialState = {
   searchBarValue: "",
 };
+
+// the state of the application
 const state = State.getState(initialState);
 
 // handling search functionality of the searchBar
 const searchBar = document.querySelector(".image-search");
 
 const handleChange = (event) => {
-  console.log("I ran");
   state.setState({ searchBarValue: event.target.value });
-  console.log(state.state.searchBarValue);
 };
-searchBar.addEventListener("change", handleChange);
+searchBar.addEventListener("input", handleChange);
 
 // element selection
 const imageContainer = document.querySelector("#image-container");
 const loadImages = () => {
   data.map((item) => {
-    let cardComponent = document.createElement("div");
-    let imageElement = document.createElement("img");
-
-    cardComponent.classList.add("card");
-    imageElement.setAttribute("src", item.url);
-    imageElement.classList.add("image");
-
-    cardComponent.appendChild(imageElement);
-    imageContainer.appendChild(cardComponent);
+    if (state.state.searchBarValue.trim() != "") {
+      if (
+        item.name
+          .toLowerCase()
+          .includes(state.state.searchBarValue.toLowerCase())
+      ) {
+        createCardElement(item);
+      }
+    } else {
+      createCardElement(item);
+    }
   });
+};
+
+// creates the card element and append it to the imagecontainer
+const createCardElement = (item) => {
+  // creating and configuring card component
+  const cardComponent = document.createElement("div");
+  cardComponent.classList.add("card");
+
+  // creating and configuring image element
+  const imageElement = document.createElement("img");
+  imageElement.setAttribute("src", item.url);
+  imageElement.classList.add("image");
+
+  // creating and configuring the name element
+  const nameElement = document.createElement("h3");
+  nameElement.classList.add("image-name");
+  nameElement.textContent = item.name;
+
+  // appending the element to their respective parent elements
+  cardComponent.appendChild(imageElement);
+  cardComponent.appendChild(nameElement);
+  imageContainer.appendChild(cardComponent);
+};
+
+// updates the imagecontainer based on the user input
+const updateImageContainer = () => {
+  const children = imageContainer.childNodes;
+  while (children.length > 0) {
+    children[0].remove();
+  }
+  loadImages();
 };
 
 // loading data from API after loading static elements
