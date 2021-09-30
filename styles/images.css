@@ -29,6 +29,22 @@
 .card .image-name {
   padding: 5px;
 }
+.card .card-bottom {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* heart icon  */
+.heart {
+  margin: auto 5px;
+  font-size: large;
+  cursor: pointer;
+}
+.heart.fav {
+  color: red;
+}
 
 /* for mid-size screen */
 @media (max-width: 800px) {

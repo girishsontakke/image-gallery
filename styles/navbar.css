@@ -16,7 +16,6 @@ header > nav {
 }
 
 #navbar > .right {
-  width: 30%;
   display: flex;
   justify-content: space-around;
 }
@@ -26,4 +25,20 @@ header > nav {
   outline: none;
   border-radius: 3px;
   padding: 10px;
+  margin: 0 30px;
+}
+
+/* for mid-size screen */
+@media (max-width: 800px) {
+}
+
+/* for mobile-size screen */
+@media (max-width: 600px) {
+  #navbar .right > .nav-link:last-child {
+    display: none;
+  }
+
+  #navbar > .right > .image-search {
+    margin: 0;
+  }
 }
